@@ -27,4 +27,9 @@ public class ScheduleController {
     public List<ScheduleResonseDto> getSchedules() {
         return scheduleService.getSchedules();
     }
+
+    @GetMapping("/schedule/{id}")
+    public ScheduleResonseDto getScheduleById(@PathVariable Long id) {
+        return scheduleService.getScheduleById(id);
+    }
 }

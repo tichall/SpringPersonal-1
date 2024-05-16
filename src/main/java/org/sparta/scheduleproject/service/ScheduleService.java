@@ -26,4 +26,9 @@ public class ScheduleService {
     public List<ScheduleResonseDto> getSchedules() {
         return scheduleRepository.findAllByOrderByModifiedAtDesc().stream().map(ScheduleResonseDto::new).toList();
     }
+
+    public ScheduleResonseDto getScheduleById(Long id) {
+        Schedule schedule = scheduleRepository.getById(id);
+        return new ScheduleResonseDto(schedule);
+    }
 }
