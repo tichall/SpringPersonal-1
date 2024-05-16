@@ -1,0 +1,30 @@
+package org.sparta.scheduleproject.controller;
+
+import org.sparta.scheduleproject.dto.ScheduleRequestDto;
+import org.sparta.scheduleproject.dto.ScheduleResonseDto;
+import org.sparta.scheduleproject.entity.Schedule;
+import org.sparta.scheduleproject.service.ScheduleService;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api")
+public class ScheduleController {
+
+    private final ScheduleService scheduleService;
+
+    public ScheduleController(ScheduleService scheduleService) {
+        this.scheduleService = scheduleService;
+    }
+
+    @PostMapping("/schedule")
+    public ScheduleResonseDto createSchedule(@RequestBody ScheduleRequestDto requestDto) {
+        return scheduleService.createSchedule(requestDto);
+    }
+
+    @GetMapping("/schedules")
+    public List<ScheduleResonseDto> getSchedules() {
+        return scheduleService.getSchedules();
+    }
+}
