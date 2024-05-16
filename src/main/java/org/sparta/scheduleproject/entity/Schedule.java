@@ -39,4 +39,10 @@ public class Schedule extends Timestamped {
         this.owner = requestDto.getOwner();
         this.password = requestDto.getPassword();
     }
+
+    public void update(ScheduleRequestDto requestDto) {
+        this.title = requestDto.getTitle();
+        this.contents = requestDto.getContents();
+        this.owner = requestDto.getOwner();
+    }
 }
