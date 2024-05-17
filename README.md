@@ -7,3 +7,39 @@
 ## Usecase Diagram
 
 ![유스케이스 다이어그램](SpringPersonal.png)
+
+<br>
+
+## API 명세서
+### 일정 작성
+**기능**
+- 일정 작성
+- 
+**Method**
+- POST
+
+**URL**
+- /api/schedule
+
+**Request**
+{
+"title" : "제목",
+"contents" : "내용",
+"owner" : "담당자",
+"password" : "비밀번호"
+}
+
+**Response**
+{ 
+‘title’ : ‘제목’, 
+‘contents’ : ‘내용’, 
+‘owner’ : ‘담당자’,
+’createdAt’ : 생성 날짜,
+’modifiedAt’ : 수정 날짜
+}
+
+### 일정 조회
+
+### 일정 수정
+
+### 일정 삭제 
