@@ -10,6 +10,9 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
+/**
+ * 생성 시간, 수정 시간을 저장할 객체
+ */
 @Getter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)

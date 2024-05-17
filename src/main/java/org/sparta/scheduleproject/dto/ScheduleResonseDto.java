@@ -5,6 +5,9 @@ import org.sparta.scheduleproject.entity.Schedule;
 
 import java.time.LocalDateTime;
 
+/**
+ * 일정 조회 시 반환할 responseDto
+ */
 @Getter
 public class ScheduleResonseDto {
     private Long id;

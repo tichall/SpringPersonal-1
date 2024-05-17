@@ -1,5 +1,6 @@
 package org.sparta.scheduleproject.controller;
 
+import org.sparta.scheduleproject.dto.ScheduleDeleteRequestDto;
 import org.sparta.scheduleproject.dto.ScheduleRequestDto;
 import org.sparta.scheduleproject.dto.ScheduleResonseDto;
 import org.sparta.scheduleproject.entity.Schedule;
@@ -36,5 +37,10 @@ public class ScheduleController {
     @PutMapping("/schedule/{id}")
     public ScheduleResonseDto updateSchedule(@PathVariable Long id, @RequestBody ScheduleRequestDto requestDto) {
         return scheduleService.updateSchedule(id, requestDto);
+    }
+
+    @DeleteMapping("/schedule")
+    public String deleteSchedule(@RequestBody ScheduleDeleteRequestDto requestDto) {
+        return scheduleService.deleteSchedule(requestDto);
     }
 }

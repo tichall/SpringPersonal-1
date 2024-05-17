@@ -11,6 +11,9 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+/**
+ * 일정 객체
+ */
 @Entity
 @Getter
 @Setter
