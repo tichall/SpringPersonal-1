@@ -3,6 +3,13 @@
 <br>
 <br>
 
+# 목차
+[Usecase Diagram] (#Usecase-Diagram)
+[API 명세서] (#API-명세서)
+[ERD Diagram] (#ERD-Diagram)
+
+<br>
+<br>
 
 # Usecase Diagram
 
@@ -133,5 +140,10 @@
 
 **기타**
 - 해당 일정에 저장된 비밀번호와 request body로 전달된 비밀번호가 일치해야 일정 삭제 가능
+
+
+# ERD Diagram
+
+![Schedule](https://github.com/tichall/SpringPersonal-1/assets/152502639/12e03cf3-e40d-40f9-b4bb-65a630c1f9d4)
 
 
