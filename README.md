@@ -4,10 +4,9 @@
 <br>
 
 # 목차
-
-- [Usecase Diagram] (#Usecase-Diagram)
-- [API 명세서] (#API-명세서)
-- [ERD Diagram] (#ERD-Diagram)
+- [Usecase Diagram](#usecase-diagram)
+- [API 명세서](#api-명세서)
+- [ERD Diagram](#erd-diagram)
 
 <br>
 <br>
@@ -141,7 +140,9 @@
 
 **기타**
 - 해당 일정에 저장된 비밀번호와 request body로 전달된 비밀번호가 일치해야 일정 삭제 가능
-
+- 
+<br>
+<br>
 
 # ERD Diagram
 
