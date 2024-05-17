@@ -12,6 +12,6 @@ import java.util.Map;
 
 @Repository
 public interface ScheduleRepository extends JpaRepository<Schedule, Long> {
-    List<Schedule> findAllByOrderByModifiedAtDesc();
+    List<Schedule> findAllByOrderByCreatedAtDesc();
 
 }
