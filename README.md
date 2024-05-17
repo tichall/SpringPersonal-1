@@ -4,17 +4,15 @@
 <br>
 
 
-## Usecase Diagram
+# Usecase Diagram
 
 ![유스케이스 다이어그램](SpringPersonal.png)
 
 <br>
 
-## API 명세서
-### 일정 작성
-**기능**
-- 일정 작성
-- 
+# API 명세서
+## 일정 작성
+  
 **Method**
 - POST
 
@@ -22,6 +20,7 @@
 - /api/schedule
 
 **Request**
+
 {
 "title" : "제목",
 "contents" : "내용",
@@ -30,6 +29,7 @@
 }
 
 **Response**
+
 { 
 ‘title’ : ‘제목’, 
 ‘contents’ : ‘내용’, 
@@ -38,8 +38,38 @@
 ’modifiedAt’ : 수정 날짜
 }
 
-### 일정 조회
 
-### 일정 수정
+## 일정 조회
+### 선택한 일정 조회
+  
+**Method**
+- GET
 
-### 일정 삭제 
+**URL**
+- /api/schedule/{scheduleId}
+
+**Request**
+
+
+**Response**
+- 선택한 일정 정보
+
+
+### 전체 일정 조회
+
+**Method**
+- GET
+
+**URL**
+- /api/schedules
+
+**Request**
+
+
+**Response**
+- 모든 일정 정보
+
+  
+## 일정 수정
+
+## 일정 삭제 
