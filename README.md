@@ -9,8 +9,10 @@
 ![유스케이스 다이어그램](SpringPersonal.png)
 
 <br>
+<br>
 
 # API 명세서
+
 ## 일정 작성
   
 **Method**
@@ -38,6 +40,8 @@
 ’modifiedAt’ : 수정 날짜
 }
 
+<br>
+<br>
 
 ## 일정 조회
 ### 선택한 일정 조회
