@@ -4,9 +4,10 @@
 <br>
 
 # 목차
-[Usecase Diagram] (#Usecase-Diagram)
-[API 명세서] (#API-명세서)
-[ERD Diagram] (#ERD-Diagram)
+
+- [Usecase Diagram] (#Usecase-Diagram)
+- [API 명세서] (#API-명세서)
+- [ERD Diagram] (#ERD-Diagram)
 
 <br>
 <br>
