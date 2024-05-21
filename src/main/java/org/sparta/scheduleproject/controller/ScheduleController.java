@@ -1,5 +1,6 @@
 package org.sparta.scheduleproject.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.sparta.scheduleproject.dto.ScheduleDeleteRequestDto;
 import org.sparta.scheduleproject.dto.ScheduleRequestDto;
 import org.sparta.scheduleproject.dto.ScheduleResonseDto;
@@ -11,13 +12,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@RequiredArgsConstructor
 public class ScheduleController {
 
     private final ScheduleService scheduleService;
 
-    public ScheduleController(ScheduleService scheduleService) {
-        this.scheduleService = scheduleService;
-    }
+//    public ScheduleController(ScheduleService scheduleService) {
+//        this.scheduleService = scheduleService;
+//    }
 
     @PostMapping("/schedule")
     public ScheduleResonseDto createSchedule(@RequestBody ScheduleRequestDto requestDto) {

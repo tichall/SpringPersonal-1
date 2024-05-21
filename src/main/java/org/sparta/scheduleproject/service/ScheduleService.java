@@ -9,8 +9,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
+@Transactional(readOnly = true)
 public class ScheduleService {
     private static final String DELETE_SUCCESS = "삭제 성공!";
     private static final String PASSWORD_INVALID = "비밀번호가 일치하지 않습니다.";
@@ -21,6 +23,7 @@ public class ScheduleService {
         this.scheduleRepository = scheduleRepository;
     }
 
+    @Transactional
     public ScheduleResonseDto createSchedule(ScheduleRequestDto requestDto) {
         Schedule schedule = new Schedule(requestDto);
         Schedule saveSchedule = scheduleRepository.save(schedule);
@@ -49,6 +52,7 @@ public class ScheduleService {
         }
     }
 
+    @Transactional
     public String deleteSchedule(ScheduleDeleteRequestDto requestDto) {
         Schedule schedule = findSchedule(requestDto.getId());
         if (checkPassword(requestDto.getPassword(), schedule)) {
@@ -73,6 +77,6 @@ public class ScheduleService {
      *
      */
     private boolean checkPassword(String InputPassword, Schedule schedule) {
-        return InputPassword.equals(schedule.getPassword());
+        return Objects.equals(InputPassword, schedule.getPassword());
     }
 }
