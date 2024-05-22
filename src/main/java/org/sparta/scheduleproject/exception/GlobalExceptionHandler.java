@@ -9,13 +9,19 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionHandler {
     @ExceptionHandler(PasswordInvalidException.class)
     public ResponseEntity<ErrorResponse> handlePasswordInvalidException(PasswordInvalidException e) {
-        ErrorResponse errorResponse = new ErrorResponse(e.getErrorCode());
-        return new ResponseEntity<>(errorResponse, HttpStatusCode.valueOf(e.getErrorCode().getStatus()));
+        ErrorResponse errorResponse = new ErrorResponse(e.getStateCode());
+        return new ResponseEntity<>(errorResponse, HttpStatusCode.valueOf(e.getStateCode().getStatus()));
     }
 
     @ExceptionHandler(DeletedScheduleAccessException.class)
     public ResponseEntity<ErrorResponse> handleDeletedScheduleAccessException (DeletedScheduleAccessException e) {
-        ErrorResponse errorResponse = new ErrorResponse(e.getErrorCode());
-        return new ResponseEntity<>(errorResponse, HttpStatusCode.valueOf(e.getErrorCode().getStatus()));
+        ErrorResponse errorResponse = new ErrorResponse(e.getStateCode());
+        return new ResponseEntity<>(errorResponse, HttpStatusCode.valueOf(e.getStateCode().getStatus()));
+    }
+
+    @ExceptionHandler(ScheduleNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleScheduleNotFoundException (ScheduleNotFoundException e) {
+        ErrorResponse errorResponse = new ErrorResponse(e.getStateCode());
+        return new ResponseEntity<>(errorResponse, HttpStatusCode.valueOf(e.getStateCode().getStatus()));
     }
 }

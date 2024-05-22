@@ -41,8 +41,8 @@ public class ScheduleController {
         return scheduleService.updateSchedule(id, requestDto);
     }
 
-    @DeleteMapping("/schedule")
-    public String deleteSchedule(@RequestBody ScheduleDeleteRequestDto requestDto) {
-        return scheduleService.deleteSchedule(requestDto);
+    @DeleteMapping("/schedule/{id}")
+    public String deleteSchedule(@PathVariable Long id, @RequestBody ScheduleDeleteRequestDto requestDto) {
+        return scheduleService.deleteSchedule(id, requestDto);
     }
 }
