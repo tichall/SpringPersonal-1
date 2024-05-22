@@ -4,6 +4,7 @@ import org.sparta.scheduleproject.dto.ScheduleDeleteRequestDto;
 import org.sparta.scheduleproject.dto.ScheduleRequestDto;
 import org.sparta.scheduleproject.dto.ScheduleResonseDto;
 import org.sparta.scheduleproject.entity.Schedule;
+import org.sparta.scheduleproject.exception.DeletedScheduleAccessException;
 import org.sparta.scheduleproject.exception.ErrorCode;
 import org.sparta.scheduleproject.exception.PasswordInvalidException;
 import org.sparta.scheduleproject.repository.ScheduleRepository;
@@ -12,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
@@ -66,9 +68,14 @@ public class ScheduleService {
     }
 
     private Schedule findSchedule(Long id) {
-        return scheduleRepository.findById(id).orElseThrow(() ->
-                new IllegalArgumentException("선택한 일정은 존재하지 않습니다!")
-        );
+        Optional<Schedule> schedule = scheduleRepository.findById(id);
+
+        return scheduleRepository.findById(id).orElseThrow(() -> {
+            if (id < scheduleRepository.findTopByOrderByIdDesc().getId()) {
+                throw new DeletedScheduleAccessException("삭제된 일정 접근", ErrorCode.DELETED_SCHEDULE);
+            }
+            throw new IllegalArgumentException("선택한 일정은 존재하지 않습니다!");
+        });
     }
 
     /**
