@@ -4,6 +4,8 @@ import org.sparta.scheduleproject.dto.ScheduleDeleteRequestDto;
 import org.sparta.scheduleproject.dto.ScheduleRequestDto;
 import org.sparta.scheduleproject.dto.ScheduleResonseDto;
 import org.sparta.scheduleproject.entity.Schedule;
+import org.sparta.scheduleproject.exception.ErrorCode;
+import org.sparta.scheduleproject.exception.PasswordInvalidException;
 import org.sparta.scheduleproject.repository.ScheduleRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -59,7 +61,7 @@ public class ScheduleService {
             scheduleRepository.delete(schedule);
             return DELETE_SUCCESS;
         } else {
-            throw new IllegalArgumentException(PASSWORD_INVALID);
+            throw new PasswordInvalidException("비밀번호 오류", ErrorCode.PASSWORD_INVALID);
         }
     }
 
